@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel = "stylesheet" type = "text/css" href = "Gomoku.css" />
+    <script src = "changeColors.js" ></script>
+    <script src = "winning.js" ></script>
+    <script src = "stopwatch.js" ></script>
+    <script src = "ArtificialPlayer.js"></script>
+
+    <title>Gomoku Game (Player vs AI)</title>
+  </head>
+  <body onload="show()">
+    <br>
+    <div id = "mainbar">
+      <ul class  = "lst">
+        <li class = "items"><a class="active" href="main.html">Home</a></li>
+        <li class = "items"><a class="active" href="Description.html">Description</a></li>
+        <li class = "items"><a class="active" href="information.html">About me</a></li>
+        <li class = "items"><a class="active" href="PlayerMode.html">Play Gomoku</a></li>
+      </ul>
+</div>
+<br>
+<br>
+    <div id = "mainContainer">
+      <div id = "horizBar">
+
+        <div class="dropdown">
+
+          <button id = "btn0" class = "gridVrtBar dropbtn">Size</button>
+              <div class="dropdown-content">
+
+                <a onclick = "generateAI(15)">15X15(single)</a>
+                <a onclick="generateAI(19)">19X19(single)</a>
+              </div>
+        </div>
+
+
+        <div class="dropdown">
+          <button id = "btn1" class = "gridVrtBar dropbtn">Color</button>
+          <div id = "colors" class="dropdown-content">
+            <a style = "background:red;" onclick = "changeTableColor('red')">red</a>
+            <a style = "background:pink;" onclick="changeTableColor('pink')">pink</a>
+            <a style = "background:DarkSalmon;" onclick="changeTableColor('DarkSalmon')">DarkSalmon</a>
+            <a style = "background:LightSkyBlue;" onclick="changeTableColor('LightSkyBlue')">LightSkyBlue</a>
+            <a style = "background:Olive;" onclick="changeTableColor('Olive')">Olive</a>
+            <a style = "background:Peru;" onclick="changeTableColor('Peru')">Peru</a>
+            <a style = "background:Beige;" onclick="changeTableColor('Beige')">Beige</a>
+            <a style = "background:BurlyWood;" onclick="changeTableColor('BurlyWood')">BurlyWood</a>
+            <a style = "background:CornflowerBlue;" onclick="changeTableColor('CornflowerBlue')">CornflowerBlue</a>
+            <a style = "background:DarkGreen;" onclick="changeTableColor('DarkGreen')">DarkGreen</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button id = "btn1" class = "gridVrtBar dropbtn">Opponent Color</button>
+          <div id = "colors" class="dropdown-content">
+            <a style = "background:red;" onclick = "changeOponentColor('red')">red</a>
+            <a style = "background:pink;" onclick="changeOponentColor('pink')">pink</a>
+            <a style = "background:DarkSalmon;" onclick="changeOponentColor('DarkSalmon')">DarkSalmon</a>
+            <a style = "background:LightSkyBlue;" onclick="changeOponentColor('LightSkyBlue')">LightSkyBlue</a>
+            <a style = "background:Olive;" onclick="changeOponentColor('Olive')">Olive</a>
+            <a style = "background:Peru;" onclick="changeOponentColor('Peru')">Peru</a>
+            <a style = "background:Beige;" onclick="changeOponentColor('Beige')">Beige</a>
+            <a style = "background:BurlyWood;" onclick="changeOponentColor('BurlyWood')">BurlyWood</a>
+            <a style = "background:CornflowerBlue;" onclick="changeOponentColor('CornflowerBlue')">CornflowerBlue</a>
+            <a style = "background:DarkGreen;" onclick="changeOponentColor('DarkGreen')">DarkGreen</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button id = "btn1" class = "gridVrtBar dropbtn">Your Color</button>
+          <div id = "colors" class="dropdown-content">
+            <a style = "background:red;" onclick = "changePlayerColor('red')">red</a>
+            <a style = "background:pink;" onclick="changePlayerColor('pink')">pink</a>
+            <a style = "background:DarkSalmon;" onclick="changePlayerColor('DarkSalmon')">DarkSalmon</a>
+            <a style = "background:LightSkyBlue;" onclick="changePlayerColor('LightSkyBlue')">LightSkyBlue</a>
+            <a style = "background:Olive;" onclick="changePlayerColor('Olive')">Olive</a>
+            <a style = "background:Peru;" onclick="changePlayerColor('Peru')">Peru</a>
+            <a style = "background:Beige;" onclick="changePlayerColor('Beige')">Beige</a>
+            <a style = "background:BurlyWood;" onclick="changePlayerColor('BurlyWood')">BurlyWood</a>
+            <a style = "background:CornflowerBlue;" onclick="changePlayerColor('CornflowerBlue')">CornflowerBlue</a>
+            <a style = "background:DarkGreen;" onclick="changePlayerColor('DarkGreen')">DarkGreen</a>
+          </div>
+        </div>
+
+      </div>
+      <div>Time Since Beginning: <span id="time"></span></div>
+      <div>
+      <div class = "piecesNum">Current Turn: <span id= "currentTurn"></span></div>
+      <div class = "piecesNum">Number of Green(o) Pieces: <span id= "o"></span></div>
+      <div class = "piecesNum">Number of Red(x) Pieces: <span id= "x"></span></div>
+      <div class = "piecesNum">Total Number Pieces: <span id= "total"></span></div>
+      </div>
+    </div>
+  </body>
+</html>
